@@ -5,6 +5,7 @@ import Login from '@/views/Login'
 import Me from '@/views/Layout/me.vue'
 import Cart from '@/views/Layout/cart.vue'
 import Message from '@/views/Layout/message.vue'
+import Register from '@/views/Register'
 
 Vue.use(VueRouter)
 
@@ -20,7 +21,8 @@ const router = new VueRouter({
         { path: '/me', component: Me }
       ]
     },
-    { path: '/login', component: Login }
+    { path: '/login', component: Login },
+    { path: '/register', component: Register }
   ]
 })
 

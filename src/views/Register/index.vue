@@ -1,44 +1,48 @@
 <template>
- <div>
-   <van-nav-bar
-     title="标题"
-     left-text="返回"
-     right-text="按钮"
-     left-arrow
-     @click-left="$router.go(-1)"
-   />
-   <form class="form">
-     <p class="form-title">欢迎回来登录</p>
-     <div class="input-container">
-       <input type="email" placeholder="请输入邮箱" v-model="useremail">
-     </div>
-     <div class="input-container">
-       <input type="password" placeholder="输入密码" v-model="password">
-     </div>
-     <button type="submit" class="submit">
-       登录
-     </button>
-     <div class="ts">
-       <p class="signup-link">
-         还没有账号？
-         <a @click="$router.push('/register')" >注册</a>
-       </p>
-       <p class="signup-link">
-         <a>忘记密码</a>
-       </p>
-     </div>
-   </form>
- </div>
+  <div>
+    <van-nav-bar
+      title="标题"
+      left-text="返回"
+      right-text="按钮"
+      left-arrow
+      @click-left="$router.go(-1)"
+    />
+    <form class="form">
+      <p class="form-title">欢迎注册</p>
+      <div class="input-container">
+        <input type="text" placeholder="请输入用户名" v-model="username">
+      </div>
+      <div class="input-container">
+        <input type="email" placeholder="请输入邮箱" v-model="useremail">
+      </div>
+      <div class="input-container">
+        <input type="password" placeholder="输入密码" v-model="password">
+      </div>
+      <div class="input-container">
+        <input type="password" placeholder="确认密码" v-model="ackpassword">
+      </div>
+      <button type="submit" class="submit">
+        注册
+      </button>
+
+      <p class="signup-link">
+        已有账号？
+        <a @click="$router.push('/login')" >登录</a>
+      </p>
+    </form>
+  </div>
 
 </template>
 
 <script >
 export default {
-  name: 'LoginIndex',
+  name: 'RegisterIndex',
   data () {
     return {
+      username: '',
       useremail: '',
-      password: ''
+      password: '',
+      ackpassword: ''
     }
   }
 }
@@ -114,12 +118,5 @@ export default {
 
 .signup-link a {
   text-decoration: underline;
-}
-.ts
-{
-  display: flex;
-  flex-direction:  row;
-  justify-content: space-between;
-  width: 260px;
 }
 </style>
